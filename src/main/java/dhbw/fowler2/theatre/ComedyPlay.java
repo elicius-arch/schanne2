@@ -2,8 +2,8 @@ package dhbw.fowler2.theatre;
 
 public class ComedyPlay extends Play {
 
-	public ComedyPlay(String name, String type) {
-		super(name, type);
+	public ComedyPlay(String name) {
+		super(name);
 	}
 
 	@Override

@@ -9,7 +9,7 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class StatementPrinterTest {
+public class HtmlStatementPrinterTest {
 
     @Test
     public void printsStatements() {
@@ -20,11 +20,11 @@ public class StatementPrinterTest {
         StatementPrinter statementPrinter = new WordStatementPrinter(invoice);
         var result = statementPrinter.print();
 
-        Assert.assertEquals("Statement print mismatch", "Statement for BigCo\n" +
-                "  Hamlet: $650.00 (55 seats)\n" +
-                "  As You Like It: $580.00 (35 seats)\n" +
-                "  Othello: $500.00 (40 seats)\n" +
-                "Amount owed is $1,730.00\n" +
-                "You earned 47 credits\n", result);
+        Assert.assertEquals("Statement print mismatch", "<p>Statement for BigCo</p>" +
+                "<p><b>Hamlet<b>: $650.00 (55 seats)</p>" +
+                "<p><b>As You Like It<b>: $580.00 (35 seats)</p>" +
+                "<p><b>Othello<b>: $500.00 (40 seats)</p>" +
+                "</p>Amount owed is $1,730.00</p>" +
+                "</p>You earned 47 credits</p>", result);
     }
 }

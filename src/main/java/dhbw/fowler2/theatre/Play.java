@@ -2,13 +2,20 @@ package dhbw.fowler2.theatre;
 
 public abstract class Play {
 
-    public String name;
-    public String type;
+	private String name;
 
-    public Play(String name, String type) {
-        this.name = name;
-        this.type = type;
-    }
-    
-    public abstract int getAmount(Performance performance);
+	public Play(String name) {
+		this.name = name;
+	}
+
+	public abstract int getAmount(Performance performance);
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }
