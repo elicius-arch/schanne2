@@ -13,16 +13,12 @@ public class StatementPrinterTest {
 
     @Test
     public void printsStatements() {
-        Map<String, Play> plays = Map.of("hamlet", new TragedyPlay("Hamlet", "tragedy"),
-                "as-like", new ComedyPlay("As You Like It", "comedy"),
-                "othello", new TragedyPlay("Othello", "tragedy"));
+        Invoice invoice = new Invoice("BigCo", List.of(new Performance(new TragedyPlay("Hamlet", "tragedy"), 55),
+                new Performance(new ComedyPlay("As You Like It", "comedy"), 35),
+                new Performance(new TragedyPlay("Othello", "tragedy"), 40)));
 
-        Invoice invoice = new Invoice("BigCo", List.of(new Performance("hamlet", 55),
-                new Performance("as-like", 35),
-                new Performance("othello", 40)));
-
-        StatementPrinter statementPrinter = new StatementPrinter();
-        var result = statementPrinter.print(invoice, plays);
+        StatementPrinter statementPrinter = new WordStatementPrinter(invoice);
+        var result = statementPrinter.print();
 
         Assert.assertEquals("Statement print mismatch", "Statement for BigCo\n" +
                 "  Hamlet: $650.00 (55 seats)\n" +

@@ -9,10 +9,10 @@ public class ComedyPlay extends Play {
 	@Override
 	public int getAmount(Performance performance) {
 		int thisAmount = 30000;
-        if (performance.audience > 20) {
-            thisAmount += 10000 + 500 * (performance.audience - 20);
+        if (performance.getAudience() > 20) {
+            thisAmount += 10000 + 500 * (performance.getAudience() - 20);
         }
-        thisAmount += 300 * performance.audience;
+        thisAmount += 300 * performance.getAudience();
         return thisAmount;
 	}
 

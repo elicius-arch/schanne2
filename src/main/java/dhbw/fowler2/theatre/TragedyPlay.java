@@ -9,8 +9,8 @@ public class TragedyPlay extends Play {
 	@Override
 	public int getAmount(Performance performance) {
 		int thisAmount = 40000;
-        if (performance.audience > 30) {
-            thisAmount += 1000 * (performance.audience - 30);
+        if (performance.getAudience() > 30) {
+            thisAmount += 1000 * (performance.getAudience() - 30);
         }
         return thisAmount;
 	}
