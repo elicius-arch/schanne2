@@ -1,6 +1,6 @@
 package dhbw.fowler2.theatre;
 
-public class Play {
+public abstract class Play {
 
     public String name;
     public String type;
@@ -9,4 +9,6 @@ public class Play {
         this.name = name;
         this.type = type;
     }
+    
+    public abstract int getAmount(Performance performance);
 }
