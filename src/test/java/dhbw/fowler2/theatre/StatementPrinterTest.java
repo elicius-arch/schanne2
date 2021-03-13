@@ -1,11 +1,7 @@
 package dhbw.fowler2.theatre;
 
-import dhbw.fowler2.theatre.Play;
-import dhbw.fowler2.theatre.Performance;
-import dhbw.fowler2.theatre.StatementPrinter;
-import dhbw.fowler2.theatre.Invoice;
 import java.util.List;
-import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
